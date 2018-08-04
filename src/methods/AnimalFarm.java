@@ -15,14 +15,29 @@ public class AnimalFarm {
 	AnimalFarm() {
 		/*
 		 * 1. Ask the user which animal they want, then play the sound of that animal.
+
 		 */
 		
 		/* 2. Make it so that the user can keep entering new animals. */
-	}
+		//JOptionPane.showOptionDialog(null, "which animal do you want?", "Animal Farm", , messageType, icon, options, initialValue)
+		
+		String answer=JOptionPane.showInputDialog("what animal do you want,"
+				+ "cow,duck,dog?");
+		
+		Object request;
+		
+		if (answer.equals("cow")) {
+		playNoise(mooFile);	
+		}
+	
+	
+	if (answer.equals("duck")) { 
+	 playQuack(); 
+		playNoise(mooFile);}
 
-	void playMoo() {
-		playNoise(mooFile);
-	}
+	if (answer.equals("dog")) {
+	playNoise(woofFile);}}
+	
 
 	void playQuack() {
 		playNoise(quackFile);
