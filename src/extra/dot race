@@ -1,7 +1,7 @@
 int x=100;
 
 void setup() {
-    size(800, 200);
+    size(800, 300);
 }
 
 void draw() {
@@ -10,8 +10,17 @@ void draw() {
     //4. if the mouse is pressed...
   if(mousePressed){
 x++;
- fill(20,20,200);    ellipse(x,145,100,100); 
-    }
+//playSound();
+ fill(20,20,200);    ellipse(x,145,70,70); 
+fill(30,30,300);    ellipse(x,230,10,70);
+if(x==700){
+ playSound(); 
+
+}
+if(x==700){
+ text("YOu win player 1",20,20);
+  }
+  }
   
     //5. ... change the X co-ordinate so that the dot moves to the right
     //2. Draw an ellipse of height and width 100. Make sure to use your variable for the X position.
@@ -28,7 +37,7 @@ boolean soundPlayed = false;
 void playSound() {
     if (!soundPlayed) {
         Minim minim = new Minim(this);
-        AudioSample sound = minim.loadSample("ding2.wav");
+        AudioSample sound = minim.loadSample("caturday.wav");
         sound.trigger();
         soundPlayed = true;
     }
